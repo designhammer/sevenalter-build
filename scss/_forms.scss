@@ -69,7 +69,7 @@ textarea {
   font-size: rem(13);
   font-weight: 600;
   text-shadow: none;
-  border: 2px solid $blue-dark;
+  border: 1px solid $blue-dark;
   border-radius: 3px;
   background: $md-gray-50 url("../images/icons/fa-regular/dark/chevron-down.svg") no-repeat 94% 50%;
   background-size: 14px auto;
@@ -130,7 +130,7 @@ fieldset.filter-wrapper {
 @mixin button {
   color: $blue-dark;
   text-shadow: none;
-  border: 2px solid $blue-dark;
+  border: 1px solid $blue-dark;
   border-radius: 3px;
   background-color: $md-gray-50;
   background-image: none;
@@ -139,7 +139,7 @@ fieldset.filter-wrapper {
   &:hover,
   &:focus {
     color: $white;
-    border-width: 2px;
+    border-width: 1px;
     border-color: $blue-dark;
     background-color: $blue-dark;
     background-image: none;
@@ -151,16 +151,16 @@ fieldset.filter-wrapper {
   color: $white;
   text-shadow: none;
   border-color: $bgcolor;
-  border-radius: 2px;
+  border-radius: 3px;
   background-color: $bgcolor;
   background-image: none;
   padding: 0.62rem 1.75rem !important;
 
   &:hover,
   &:focus {
-    border-width: 2px;
-    border-color: darken($bgcolor, 10%);
-    background-color: darken($bgcolor, 10%);
+    border-width: 1px;
+    // border-color: lighten($bgcolor, 10%);
+    background-color: lighten($bgcolor, 10%);
     background-image: none;
     box-shadow: none;
   }

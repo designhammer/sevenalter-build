@@ -186,8 +186,8 @@ body {
     .dropbutton-widget {
       color: #333;
       text-shadow: none !important;
-      border: 2px solid $blue-dark !important;
-      border-radius: 2px !important;
+      border: 1px solid $blue-dark !important;
+      border-radius: 3px !important;
       background-color: $md-gray-50 !important;
       background-image: none !important;
 
@@ -300,7 +300,7 @@ body {
   .entity-meta {
     border-right: 1px solid $md-gray-400;
     border-left: 1px solid $md-gray-400;
-    border-radius: 2px;
+    border-radius: 3px;
     background-color: $md-gray-200;
     box-shadow: none;
 
@@ -414,8 +414,8 @@ body {
     }
 
     .dropbutton-single .dropbutton-action a {
-      border: 2px solid $blue-dark;
-      border-radius: 2px !important;
+      border: 1px solid $blue-dark;
+      border-radius: 3px !important;
       background-color: $md-gray-100;
       background-image: none;
 

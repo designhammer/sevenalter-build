@@ -68,28 +68,12 @@ Add to composer.json (the first part is already there).
             "url": "https://packages.drupal.org/8"
         },
         {
-            "type":"package",
-            "package": {
-              "name": "frankyonnetti/sevenalter",
-              "version":"master",
-              "source": {
-                  "url": "https://github.com/frankyonnetti/sevenalter.git",
-                  "type": "git",
-                  "reference":"master"
-                }
-            }
+            "type": "git",
+            "url": "https://github.com/frankyonnetti/sevenalter_toolbar.git"
         },
         {
-            "type":"package",
-            "package": {
-              "name": "frankyonnetti/sevenalter_toolbar",
-              "version":"master",
-              "source": {
-                  "url": "https://github.com/frankyonnetti/sevenalter_toolbar.git",
-                  "type": "git",
-                  "reference":"master"
-                }
-            }
+            "type": "git",
+            "url": "https://github.com/frankyonnetti/sevenalter.git"
         }
     ],
 
