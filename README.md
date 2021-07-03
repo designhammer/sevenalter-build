@@ -1,6 +1,6 @@
 # Seven Alter - Drupal
 
-Build files for Seven Alter theme and toolbar module.
+Build files for [Seven Alter theme](https://github.com/frankyonnetti/sevenalter) and [Seven Alter Toolbar module](https://github.com/frankyonnetti/sevenalter_toolbar).
 
 
 ## Build 🛠
@@ -69,11 +69,11 @@ Add to composer.json (the first part is already there).
         },
         {
             "type": "git",
-            "url": "https://github.com/frankyonnetti/sevenalter_toolbar.git"
+            "url": "https://github.com/frankyonnetti/sevenalter.git"
         },
         {
             "type": "git",
-            "url": "https://github.com/frankyonnetti/sevenalter.git"
+            "url": "https://github.com/frankyonnetti/sevenalter_toolbar.git"
         }
     ],
 
