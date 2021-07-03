@@ -1,0 +1,208 @@
+// ! text fields
+@mixin input-form-text {
+  color: $text-color;
+  font-size: rem(15);
+  line-height: 28px;
+  border: 1px solid $md-gray-400 !important;
+  border-radius: 3px !important;
+  background-color: $white !important;
+  box-shadow: none !important;
+  padding: 4px 2%;
+  width: auto;
+  transition: border-color 0.15s ease;
+
+  &:focus {
+    border-color: $blue !important;
+  }
+}
+
+input.form-autocomplete,
+input.form-text,
+input.form-tel,
+input.form-email,
+input.form-url,
+input.form-search,
+input.form-number,
+input.form-color,
+input.form-file,
+input.form-date,
+input.form-time {
+  @include input-form-text;
+}
+
+.form-type-checkbox {
+
+  input.form-checkbox {
+    float: left;
+    margin-top: 2px;
+  }
+
+  label {
+    margin-left: 20px;
+  }
+}
+
+// ! textarea
+@mixin textarea {
+  color: $text-color;
+  font-size: rem(15);
+  border: 1px solid $md-gray-400 !important;
+  border-radius: 1px 1px 0 0;
+  background-color: $white !important;
+  box-shadow: none !important;
+  padding: 2%;
+  width: 100%;
+  transition: border-color 0.15s ease;
+
+  &:focus {
+    border-color: $blue !important;
+  }
+}
+
+textarea {
+  @include textarea;
+}
+
+// ! select
+@mixin select {
+  color: $blue-dark;
+  font-size: rem(13);
+  font-weight: 600;
+  text-shadow: none;
+  border: 2px solid $blue-dark;
+  border-radius: 3px;
+  background: $md-gray-50 url("../images/icons/fa-regular/dark/chevron-down.svg") no-repeat 94% 50%;
+  background-size: 14px auto;
+  // box-shadow: 0 2px 3px 0 rgba($black, 0.075);
+  box-shadow: none;
+  padding: 0.4rem 0.5rem;
+  min-width: 200px;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    border-color: $blue-dark;
+    background-color: $blue-dark;
+    background-image: url("../images/icons/fa-regular/white/chevron-down.svg");
+    box-shadow: none;
+  }
+}
+
+// Only apply to touch devices.
+// Font-size at 16px avoids the automatic screen zooming.
+@media (hover: none) {
+
+  input.form-text,
+  textarea,
+  select {
+    font-size: 1rem;
+  }
+}
+
+// ! textarea - help blox
+fieldset.filter-wrapper {
+  border: 1px solid $blue;
+  border-top-style: none;
+  border-radius: 0 0 2px 2px;
+  background-color: $md-gray-100;
+
+  .filter-help {
+
+    p {
+      font-size: rem(14);
+
+      a {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .filter-guidelines {
+
+    ul {
+      font-size: rem(13);
+      padding-left: 12px;
+    }
+  }
+}
+
+// ! buttons
+@mixin button {
+  color: $blue-dark;
+  text-shadow: none;
+  border: 2px solid $blue-dark;
+  border-radius: 3px;
+  background-color: $md-gray-50;
+  background-image: none;
+  padding: 0.62rem 1.75rem !important;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    border-width: 2px;
+    border-color: $blue-dark;
+    background-color: $blue-dark;
+    background-image: none;
+    box-shadow: none;
+  }
+}
+
+@mixin button-color($bgcolor: $md-gray-100) {
+  color: $white;
+  text-shadow: none;
+  border-color: $bgcolor;
+  border-radius: 2px;
+  background-color: $bgcolor;
+  background-image: none;
+  padding: 0.62rem 1.75rem !important;
+
+  &:hover,
+  &:focus {
+    border-width: 2px;
+    border-color: darken($bgcolor, 10%);
+    background-color: darken($bgcolor, 10%);
+    background-image: none;
+    box-shadow: none;
+  }
+}
+
+// ! labels
+%form-label {
+  font-size: rem(13);
+  text-transform: uppercase;
+  display: block;
+  padding-bottom: 3px;
+}
+
+label {
+  @extend %form-label;
+}
+
+// ! views exposed form - processing text
+.views-submit-button,
+.views-reset-button {
+  position: relative;
+
+  .hide-submit-text {
+    color: $md-gray-700;
+    font-size: rem(13);
+    font-weight: 600;
+    text-transform: uppercase;
+    position: absolute;
+    top: -20px;
+    right: 0;
+  }
+}
+
+fieldset:not(.fieldgroup) {
+  background-color: $white !important;
+}
+
+fieldset {
+  border-color: $md-gray-300;
+}
+
+.seven-details {
+  border-color: $md-gray-300 !important;
+  background-color: $white !important;
+}
