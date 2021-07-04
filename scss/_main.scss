@@ -1,17 +1,17 @@
 body {
-  background-color: $md-gray-200 !important;
+  background-color: map.get($md-gray, "200") !important;
 }
 
 // ! header
 .content-header {
-  background-color: $md-gray-200 !important;
+  background-color: map.get($md-gray, "200") !important;
 
   .layout-container {
     margin: 0 1.5rem;
   }
 
   .block-page-title-block {
-    // border-bottom: 1px solid $md-gray-300;
+    // border-bottom: 1px solid map.get($md-gray, "300");
 
     .page-title {
       margin: 0 0 1.75rem 3px;
@@ -20,9 +20,9 @@ body {
 
   .block-local-tasks-block {
     border-radius: 2px 2px 0 0;
-    background-color: $md-gray-50;
-    // box-shadow: 0 -1px 0 0 rgba($md-gray-700, 0.05), 1px 0 0 0 rgba($md-gray-700, 0.05), -1px 0 0 0 rgba($md-gray-700, 0.05);
-    box-shadow: 0 0 0 1px rgba($md-gray-700, 0.05);
+    background-color: map.get($md-gray, "50");
+    // box-shadow: 0 -1px 0 0 rgba(map.get($md-gray, "700"), 0.05), 1px 0 0 0 rgba(map.get($md-gray, "700"), 0.05), -1px 0 0 0 rgba(map.get($md-gray, "700"), 0.05);
+    box-shadow: 0 0 0 1px rgba(map.get($md-gray, "700"), 0.05);
 
     .is-collapse-enabled,
     .is-horizontal {
@@ -39,33 +39,33 @@ body {
     .is-horizontal .tabs.primary .tabs__tab {
       border-style: none;
       border-radius: 0 !important;
-      background-color: $md-gray-50;
-      margin: 0 0 0 -1px !important;
+      background-color: map.get($md-gray, "50");
+      margin: 0 !important;
 
       a {
         text-decoration: none;
-        box-shadow: inset 0 -1px 0 0 rgba($md-gray-700, 0.05);
+        box-shadow: inset 0 -1px 0 0 rgba(map.get($md-gray, "700"), 0.05);
         padding: 0.75rem 2.5rem;
 
         &:focus {
-          background-color: $md-gray-50;
+          background-color: map.get($md-gray, "50");
         }
       }
 
       &.is-active {
         border-color: $white;
         background-color: $white;
-        box-shadow: inset 0 -2px 0 0 $blue-dark, inset -1px 0 0 0 rgba($md-gray-700, 0.1), inset 1px 0 0 0 rgba($md-gray-700, 0.1);
+        box-shadow: inset 0 -2px 0 0 map.get($drupal-blue, "500"), inset -1px 0 0 0 rgba(map.get($md-gray, "700"), 0.1), inset 1px 0 0 0 rgba(map.get($md-gray, "700"), 0.1);
 
         a {
-          color: $blue-dark;
+          color: map.get($drupal-blue, "500");
           text-decoration: none;
           padding: 0.75rem 2.5rem;
 
           &:focus {
-            color: $blue;
+            color: map.get($drupal-light-blue, "500");
             background-color: $white;
-            box-shadow: inset 0 -2px 0 0 $blue;
+            box-shadow: inset 0 -2px 0 0 map.get($drupal-light-blue, "500");
           }
         }
       }
@@ -97,8 +97,8 @@ body {
 .layout-container:not(.content-header > .layout-container) {
   border-radius: 2px;
   background-color: $white;
-  // box-shadow: 1px 0 0 0 rgba($md-gray-700, 0.05), 0 1px 1px 0 rgba($md-gray-700, 0.075), -1px 0 0 0 rgba($md-gray-700, 0.05);
-  box-shadow: 0 0 0 1px rgba($md-gray-700, 0.05);
+  // box-shadow: 1px 0 0 0 rgba(map.get($md-gray, "700"), 0.05), 0 1px 1px 0 rgba(map.get($md-gray, "700"), 0.075), -1px 0 0 0 rgba(map.get($md-gray, "700"), 0.05);
+  box-shadow: 0 0 0 1px rgba(map.get($md-gray, "700"), 0.05);
   margin: 0 1.5rem;
   padding: 1rem 1.75rem 1.75rem;
 }
@@ -129,7 +129,7 @@ body {
     margin-bottom: 0;
   }
 
-  select {
+  select:not([multiple="multiple"]) {
     @include select;
   }
 
@@ -147,33 +147,52 @@ body {
   }
 
   .button--primary {
-    @include button-color($blue-dark);
+    @include button-color($drupal-blue, 500);
   }
 
   .button--primary[value="Save"] {
-    @include button-color($md-light-green-600);
+    @include button-color($md-light-green, 600);
   }
 
   .button--danger {
-    @include button-color($md-gray-300);
+    @include button;
+    color: map.get($md-gray, "700");
+    border: 1px solid map.get($md-gray, "400");
+
+    &:hover {
+      color: map.get($md-red, "800");
+      border: 1px solid map.get($md-red, "600");
+      background-color: lighten(map.get($md-red, "50"), 3%);
+    }
+  }
+
+  a.button--danger {
+    text-decoration: none;
   }
 
   .layout-region-node-footer__content {
-    border-top-color: $md-gray-300;
+    border-style: none;
   }
 
   // details (fieldset)
   .seven-details {
 
     .seven-details__summary {
-      // border-style: none;
-      background: $md-gray-50 url("../images/icons/fa-regular/dark/chevron-down.svg") no-repeat top 11px right 22px !important;
+      background: map.get($md-gray, "50") url("../images/icons/fa-regular/dark/chevron-down.svg") no-repeat top 11px right 22px !important;
       background-size: 14px auto !important;
+
+      &::marker {
+        content: none;
+      }
     }
 
-    &[open] .seven-details__summary {
-      background: $white url("../images/icons/fa-regular/dark/chevron-up.svg") no-repeat top 11px right 23px !important;
-      background-size: 14px auto !important;
+    &[open] {
+      padding-top: 0 !important;
+
+      .seven-details__summary {
+        background: $white url("../images/icons/fa-regular/dark/chevron-up.svg") no-repeat top 11px right 23px !important;
+        background-size: 14px auto !important;
+      }
     }
   }
 }
@@ -186,15 +205,15 @@ body {
     .dropbutton-widget {
       color: #333;
       text-shadow: none !important;
-      border: 1px solid $blue-dark !important;
+      border: 1px solid map.get($drupal-blue, "500") !important;
       border-radius: 3px !important;
-      background-color: $md-gray-50 !important;
+      background-color: map.get($md-gray, "50") !important;
       background-image: none !important;
 
       .dropbutton {
 
         .dropbutton-toggle button {
-          border-left-color: $blue-dark !important;
+          border-left-color: map.get($drupal-blue, "500") !important;
 
           .dropbutton-arrow {
             border-style: none;
@@ -208,15 +227,15 @@ body {
 
           &:hover,
           &:focus {
-            border-left-color: $blue-dark !important;
-            background-color: $md-gray-100 !important;
+            border-left-color: map.get($drupal-blue, "500") !important;
+            background-color: map.get($md-gray, "100") !important;
             background-image: none !important;
             box-shadow: none;
           }
         }
 
         .secondary-action {
-          border-top-color: $md-gray-50 !important;
+          border-top-color: map.get($md-gray, "50") !important;
         }
 
         .dropbutton-action {
@@ -228,9 +247,9 @@ body {
           input:hover,
           input:focus {
             color: $white;
-            border-color: $blue-dark;
+            border-color: map.get($drupal-blue, "500");
             border-radius: 0 !important;
-            background-color: $blue-dark !important;
+            background-color: map.get($drupal-blue, "500") !important;
             background-image: none !important;
             box-shadow: none;
           }
@@ -243,6 +262,20 @@ body {
       top: 6px;
     }
   }
+
+  .dropbutton-single {
+
+    .dropbutton-widget {
+
+      .dropbutton {
+
+        .dropbutton-action a {
+          @include button;
+          padding: 0.25rem 1rem !important;
+        }
+      }
+    }
+  }
 }
 
 // ! table
@@ -252,21 +285,21 @@ body {
 
     thead th {
       font-weight: 400;
-      border-color: $md-gray-100;
-      background-color: $md-gray-100;
+      border-color: map.get($md-gray, "100");
+      background-color: map.get($md-gray, "100");
     }
 
     tbody tr {
-      border-bottom-color: $md-gray-200;
+      border-bottom-color: map.get($md-gray, "200");
     }
   }
 
   .system-modules table {
-    border: 1px solid $md-gray-300;
+    border: 1px solid map.get($md-gray, "300");
     border-top-style: none;
 
     td {
-      border-bottom: 1px solid $md-gray-300 !important;
+      border-bottom: 1px solid map.get($md-gray, "300") !important;
       padding: 14px 12px;
 
       details {
@@ -279,7 +312,7 @@ body {
     }
 
     tr:first-child td {
-      border-top: 1px solid $md-gray-300 !important;
+      border-top: 1px solid map.get($md-gray, "300") !important;
     }
   }
 
@@ -290,7 +323,11 @@ body {
   }
 
   .system-modules .seven-details__summary {
-    border-bottom-color: $md-gray-300;
+    border-bottom-color: map.get($md-gray, "300");
+  }
+
+  .block-disabled:not(:hover) {
+     background-color: map.get($md-gray, "100");
   }
 }
 
@@ -298,26 +335,26 @@ body {
 .layout-container {
 
   .entity-meta {
-    border-right: 1px solid $md-gray-400;
-    border-left: 1px solid $md-gray-400;
+    border-right: 1px solid map.get($md-gray, "300");
+    border-left: 1px solid map.get($md-gray, "300");
     border-radius: 3px;
-    background-color: $md-gray-200;
+    background-color: map.get($md-gray, "100");
     box-shadow: none;
 
     .seven-details {
       border-style: none;
-      border-bottom: 1px solid $md-gray-400 !important;
+      border-bottom: 1px solid map.get($md-gray, "300") !important;
     }
   }
 
   .entity-meta__header {
-    border-top: 1px solid $md-gray-400;
-    border-bottom: 1px solid $md-gray-400;
-    background-color: $md-gray-50;
+    border-top: 1px solid map.get($md-gray, "300");
+    border-bottom: 1px solid map.get($md-gray, "300");
+    background-color: map.get($md-gray, "50");
   }
 
   .admin-list li {
-    border-top-color: $md-gray-300;
+    border-top-color: map.get($md-gray, "300");
 
     &:first-child {
       border-top-style: none;
@@ -331,6 +368,49 @@ body {
   }
 }
 
+// ! vertical tabs
+.layout-container .form-type-vertical-tabs {
+
+  .vertical-tabs {
+    border-color: map.get($md-gray, "300");
+    background-color: map.get($md-gray, "100");
+
+    .vertical-tabs__menu {
+      border-color: map.get($md-gray, "300");
+
+      .vertical-tabs__menu-item {
+        border-color: map.get($md-gray, "300");
+        background-color: map.get($md-gray, "100");
+
+        &.is-selected {
+          border-right-color: $white;
+          background-color: $white;
+          box-shadow: none;
+
+          a {
+            background-color: $white !important;
+          }
+        }
+
+        a {
+          border-color: map.get($md-gray, "300");
+          background-color: map.get($md-gray, "50");
+
+          &:focus,
+          &:hover {
+            background-color: $white !important;
+          }
+        }
+      }
+    }
+
+    .vertical-tabs__panes {
+      border-color: map.get($md-gray, "300");
+      background-color: $white;
+    }
+  }
+}
+
 // ! views
 .layout-container .views-admin {
 
@@ -339,11 +419,11 @@ body {
   }
 
   .views-displays {
-    border-color: $md-gray-300;
+    border-color: map.get($md-gray, "300");
 
     .views-display-top {
-      border-color: $md-gray-300;
-      background-color: $md-gray-100;
+      border-color: map.get($md-gray, "300");
+      background-color: map.get($md-gray, "100");
     }
 
     #views-display-menu-tabs {
@@ -358,8 +438,8 @@ body {
 
         &.is-active a {
           color: $white;
-          border-color: $blue-dark;
-          background-color: $blue-dark;
+          border-color: map.get($drupal-blue, "500");
+          background-color: map.get($drupal-blue, "500");
         }
       }
 
@@ -383,8 +463,8 @@ body {
         }
 
         .action-list {
-          border-color: $md-gray-400;
-          background-color: $md-gray-50;
+          border-color: map.get($md-gray, "400");
+          background-color: map.get($md-gray, "50");
           top: 26px;
 
           li {
@@ -410,35 +490,35 @@ body {
     }
 
     .views-ui-display-tab-bucket .views-display-setting:nth-of-type(even) {
-      background-color: $md-gray-100;
+      background-color: map.get($md-gray, "100");
     }
 
     .dropbutton-single .dropbutton-action a {
-      border: 1px solid $blue-dark;
+      border: 1px solid map.get($drupal-blue, "500");
       border-radius: 3px !important;
-      background-color: $md-gray-100;
+      background-color: map.get($md-gray, "100");
       background-image: none;
 
       &:focus,
       &:hover {
         color: $white;
-        background-color: $blue-dark;
+        background-color: map.get($drupal-blue, "500");
         background-image: none;
       }
     }
   }
 
   .form-edit .form-actions {
-    border-color: $md-gray-300;
-    background-color: $md-gray-100;
+    border-color: map.get($md-gray, "300");
+    background-color: map.get($md-gray, "100");
   }
 
   &.views-preview-wrapper {
-    border-color: $md-gray-300;
+    border-color: map.get($md-gray, "300");
 
     .view-preview-form__title {
-      border-color: $md-gray-300;
-      background-color: $md-gray-100;
+      border-color: map.get($md-gray, "300");
+      background-color: map.get($md-gray, "100");
     }
 
     .form-type-checkbox .form-checkbox {
@@ -448,7 +528,7 @@ body {
 }
 
 .view-filters {
-  border-bottom: 1px solid $md-gray-300;
+  border-bottom: 1px solid map.get($md-gray, "300");
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
 }
@@ -457,14 +537,14 @@ body {
 .ui-dialog {
 
   .ui-dialog-titlebar {
-    border-bottom: 1px solid $md-gray-300 !important;
+    border-bottom: 1px solid map.get($md-gray, "300") !important;
     border-top-right-radius: 2px !important;
     border-top-left-radius: 2px !important;
     background-color: $white !important;
     padding: 1.5rem 3.1rem 1.5rem 1.5rem !important;
 
     .ui-dialog-title {
-      color: $blue-dark;
+      color: map.get($drupal-blue, "500");
       font-weight: 400;
     }
 
@@ -501,26 +581,26 @@ body {
 
     thead th {
       font-weight: 400 !important;
-      border-color: $md-gray-300 !important;
-      background-color: $md-gray-100 !important;
+      border-color: map.get($md-gray, "300") !important;
+      background-color: map.get($md-gray, "100") !important;
     }
 
     tbody > tr {
-      border-bottom-color: $md-gray-200;
+      border-bottom-color: map.get($md-gray, "200");
     }
   }
 
   .ui-dialog-buttonpane {
-    border-color: $md-gray-300;
+    border-color: map.get($md-gray, "300");
     border-bottom-right-radius: 2px !important;
     border-bottom-left-radius: 2px !important;
-    background-color: $md-gray-100 !important;
+    background-color: map.get($md-gray, "100") !important;
 
     .form-submit {
       @include button;
 
       &.button--primary {
-        @include button-color($md-blue-700);
+        @include button-color($md-blue, 700);
       }
     }
   }
@@ -530,8 +610,8 @@ body {
 .layout-container {
 
   .panel {
-    border-color: $md-gray-300;
-    background-color: $md-gray-50 !important;
+    border-color: map.get($md-gray, "300");
+    background-color: map.get($md-gray, "50") !important;
   }
 
   .layout-column + .layout-column {

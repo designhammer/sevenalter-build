@@ -2,7 +2,7 @@
 const gulp = require('gulp')
 const autoprefixer = require('autoprefixer')
 const browserSync = require('browser-sync').create()
-const notify = require('gulp-notify')
+// const notify = require('gulp-notify')
 const postcss = require('gulp-postcss')
 const sass = require('gulp-dart-sass')
 const sourceMaps = require('gulp-sourcemaps')
@@ -39,7 +39,7 @@ const multiPaths = {
 function browsersync () {
   browserSync.init({
     port: 3777,
-    proxy: 'http://local.drupal8.test',
+    proxy: 'http://local.drupal9.test',
     reloadDebounce: 1000,
     open: false,
     notify: false,
@@ -68,9 +68,9 @@ function styles (done) {
       .pipe(sourceMaps.write('./'))
       .pipe(gulp.dest(multiPaths[val].styles.dest))
       .pipe(browserSync.stream())
-      .pipe(notify({
-        message: 'Sass compiled successfully', onLast: true
-      }))
+      // .pipe(notify({
+      //   message: 'Sass compiled successfully', onLast: true
+      // }))
   })
 
   done()
@@ -87,9 +87,9 @@ function scripts (done) {
     .pipe(sourceMaps.write('./'))
     .pipe(gulp.dest(path.scripts.dest))
     .pipe(browserSync.stream())
-    .pipe(notify({
-      message: 'JS uglified successfully', onLast: true
-    }))
+    // .pipe(notify({
+    //   message: 'JS uglified successfully', onLast: true
+    // }))
 
   done()
 }
