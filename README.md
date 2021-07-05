@@ -1,6 +1,6 @@
 # Seven Alter - Drupal
 
-Build files for [Seven Alter theme](https://github.com/frankyonnetti/sevenalter) and [Seven Alter Toolbar module](https://github.com/frankyonnetti/sevenalter_toolbar).
+Build files for [Seven Alter admin theme](https://github.com/frankyonnetti/sevenalter) and [Seven Alter Toolbar module](https://github.com/frankyonnetti/sevenalter_toolbar).
 
 
 ## Build 🛠

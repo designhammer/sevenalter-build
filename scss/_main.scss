@@ -305,12 +305,31 @@ body {
       details {
         white-space: unset;
 
-        summary {
+        summary[role="button"] {
           cursor: pointer;
+
+          &::marker {
+            content: "";
+          }
+
+          &::before {
+            content: "";
+            background: transparent url("../images/icons/fa-regular/dark/chevron-right.svg") no-repeat left 5px;
+            background-size: auto 12px;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        &[open] summary[role="button"]::before {
+          background-image: url("../images/icons/fa-regular/dark/chevron-down.svg");
+          background-size: 12px auto;
         }
       }
     }
 
+    tr[style="display: none;"] + tr td,
     tr:first-child td {
       border-top: 1px solid map.get($md-gray, "300") !important;
     }
@@ -322,12 +341,17 @@ body {
     background-color: transparent;
   }
 
+  .system-modules label,
+  .system-modules-uninstall label {
+    font-size: rem(14);
+  }
+
   .system-modules .seven-details__summary {
     border-bottom-color: map.get($md-gray, "300");
   }
 
   .block-disabled:not(:hover) {
-     background-color: map.get($md-gray, "100");
+    background-color: map.get($md-gray, "100");
   }
 }
 
