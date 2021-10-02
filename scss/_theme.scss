@@ -1,0 +1,110 @@
+// ! CKEditor native dialogs
+.cke_reset_all {
+
+  .cke_dialog_body textarea,
+  .cke_dialog_body input[type="text"],
+  select.cke_dialog_ui_input_select {
+    background: #fcfcfc;
+  }
+
+  select.cke_dialog_ui_input_select {
+    background-color: #fcfcfc;
+  }
+
+  .cke_dialog .cke_dialog_footer {
+    background: #f5f5f5;
+  }
+
+  a.cke_dialog_ui_button {
+    @include gradient(#f6f6f6, #e6e6e6, vertical);
+    background-color: #f1f1f1;
+  }
+
+  .cke_dialog_footer_buttons a.cke_dialog_ui_button {
+
+    &:hover,
+    &:focus {
+      @include gradient(#fcfcfc, #e8e8e8, vertical);
+      background-color: #f8f8f8;
+    }
+
+    &:active {
+      @include gradient(#f6f6f6, #e6e6e6, vertical);
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+// ! Maintenance theming
+.maintenance-page {
+  background-color: #dfdfdf;
+  // background-image: radial-gradient(hsl(203, 2%, 90%), hsl(203, 2%, 95%));
+}
+
+@media all and (min-width: 48em) { /* 768px */
+
+  .task-list .is-active {
+    background: #eaeaea;
+  }
+
+  .task-list .is-active::after {
+    border-left-color: #eaeaea; /* LTR */
+  }
+
+  [dir="rtl"] .task-list .is-active::after {
+    border-right-color: #eaeaea;
+  }
+}
+
+// ! Media Library
+.media-library-menu {
+  background-color: #e5e5e5;
+}
+
+.media-library-menu__link {
+  border-bottom-color: #b2b2b2;
+  background-color: #f2f2f2;
+}
+
+.media-library-menu__link:active,
+.media-library-menu__link:hover,
+.media-library-menu__link:focus {
+  background: #fcfcfc;
+}
+
+.media-library-menu__link.active {
+  border-right-color: #fcfcfc; /* LTR */
+  border-bottom-color: #b2b2b2;
+}
+
+[dir="rtl"] .media-library-menu__link.active {
+  border-left-color: #fcfcfc;
+}
+
+[dir="rtl"] .media-library-content {
+  border-right-color: #b2b2b2;
+}
+
+.media-library-add-form__input-wrapper {
+  background: #fcfcfc;
+}
+
+// ! custom overrides
+
+h1,
+h2 {
+  // color: map.get($drupal-blue, "500");
+  font-weight: normal;
+}
+
+// ! footer menu
+.region-content-bottom ul.menu {
+  list-style: none;
+  margin-left: 0;
+  padding-top: 35px;
+}
+
+.region-content-bottom ul.menu li.menu-item {
+  display: inline;
+  padding-right: 10px;
+}

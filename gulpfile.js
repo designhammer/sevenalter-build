@@ -2,7 +2,7 @@
 const gulp = require('gulp')
 const autoprefixer = require('autoprefixer')
 const browserSync = require('browser-sync').create()
-// const notify = require('gulp-notify')
+const notify = require('gulp-notify')
 const postcss = require('gulp-postcss')
 const sass = require('gulp-dart-sass')
 const sourceMaps = require('gulp-sourcemaps')
@@ -14,7 +14,7 @@ const path = {
     watch: './scss/**/*.scss'
   },
   scripts: {
-    src: ['./js/scripts.js'],
+    src: './js/scripts.js',
     dest: './sevenalter/js',
     watch: './js/*.js'
   }
@@ -23,16 +23,16 @@ const path = {
 const multiPaths = {
   main: {
     styles: {
-      src: ['./scss/styles.scss'],
+      src: './scss/styles.scss',
       dest: './sevenalter/css/'
     }
-  },
-  toolbar: {
-    styles: {
-      src: ['./scss/toolbar.scss'],
-      dest: './sevenalter_toolbar/css/'
-    }
   }
+  // toolbar: {
+  //   styles: {
+  //     src: './scss/toolbar.scss',
+  //     dest: './sevenalter_toolbar/css/'
+  //   }
+  // }
 }
 
 // browserSync watch
@@ -68,9 +68,9 @@ function styles (done) {
       .pipe(sourceMaps.write('./'))
       .pipe(gulp.dest(multiPaths[val].styles.dest))
       .pipe(browserSync.stream())
-      // .pipe(notify({
-      //   message: 'Sass compiled successfully', onLast: true
-      // }))
+      .pipe(notify({
+        message: 'Sass compiled successfully', onLast: true
+      }))
   })
 
   done()
@@ -87,9 +87,9 @@ function scripts (done) {
     .pipe(sourceMaps.write('./'))
     .pipe(gulp.dest(path.scripts.dest))
     .pipe(browserSync.stream())
-    // .pipe(notify({
-    //   message: 'JS uglified successfully', onLast: true
-    // }))
+    .pipe(notify({
+      message: 'JS uglified successfully', onLast: true
+    }))
 
   done()
 }
