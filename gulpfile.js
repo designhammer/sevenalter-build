@@ -11,6 +11,8 @@ const uglify = require('gulp-uglify')
 // paths
 const path = {
   styles: {
+    src: './scss/styles.scss',
+    dest: './sevenalter/css/'
     watch: './scss/**/*.scss'
   },
   scripts: {
@@ -18,21 +20,6 @@ const path = {
     dest: './sevenalter/js',
     watch: './js/*.js'
   }
-}
-
-const multiPaths = {
-  main: {
-    styles: {
-      src: './scss/styles.scss',
-      dest: './sevenalter/css/'
-    }
-  }
-  // toolbar: {
-  //   styles: {
-  //     src: './scss/toolbar.scss',
-  //     dest: './sevenalter_toolbar/css/'
-  //   }
-  // }
 }
 
 // browserSync watch
@@ -55,23 +42,21 @@ function reload (done) {
 
 // Scss : expanded or compressed
 function styles (done) {
-  Object.keys(multiPaths).forEach(val => {
-    gulp.src(multiPaths[val].styles.src)
-      .pipe(sourceMaps.init())
-      .pipe(sass({
-        outputStyle: 'expanded'
-      }).on('error', function (err) {
-        console.log(err.toString())
-        this.emit('end')
-      }))
-      .pipe(postcss([autoprefixer()]))
-      .pipe(sourceMaps.write('./'))
-      .pipe(gulp.dest(multiPaths[val].styles.dest))
-      .pipe(browserSync.stream())
-      .pipe(notify({
-        message: 'Sass compiled successfully', onLast: true
-      }))
-  })
+  gulp.src(path.styles.src)
+    .pipe(sourceMaps.init())
+    .pipe(sass({
+      outputStyle: 'expanded'
+    }).on('error', function (err) {
+      console.log(err.toString())
+      this.emit('end')
+    }))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourceMaps.write('./'))
+    .pipe(gulp.dest(path.styles.dest))
+    .pipe(browserSync.stream())
+    .pipe(notify({
+      message: 'Sass compiled successfully', onLast: true
+    }))
 
   done()
 }
