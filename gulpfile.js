@@ -12,8 +12,8 @@ const uglify = require('gulp-uglify')
 const path = {
   styles: {
     src: './scss/styles.scss',
-    dest: './sevenalter/css/'
-    watch: './scss/**/*.scss'
+    dest: './sevenalter/css/',
+    watch: './scss/*.scss'
   },
   scripts: {
     src: './js/scripts.js',

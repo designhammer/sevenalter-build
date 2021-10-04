@@ -5,3 +5,23 @@
 .layout-region-node-footer__content {
   border-top-color: #bebebe;
 }
+
+.page-content {
+  margin-bottom: 16px !important;
+}
+
+.content-footer {
+  margin: 0 2.5em 4em;
+
+  // ! footer menu
+  ul.menu {
+    list-style: none;
+    margin-left: 0;
+    padding-top: 1em;
+
+    li.menu-item {
+      display: inline;
+      padding-right: 10px;
+    }
+  }
+}
