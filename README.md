@@ -1,6 +1,6 @@
 # Seven Alter - Drupal
 
-Build files for [Seven Alter admin theme](https://github.com/frankyonnetti/sevenalter) and [Seven Alter Toolbar module](https://github.com/frankyonnetti/sevenalter_toolbar).
+Build files for [Seven Alter admin theme](https://github.com/designhammer/sevenalter) and [Seven Alter Toolbar module](https://github.com/designhammer/sevenalter_toolbar).
 
 <img src="screenshot.png" width="335" height="250">
 
@@ -17,15 +17,15 @@ Add to composer.json (the first part is already there).
         },
         {
             "type": "git",
-            "url": "https://github.com/frankyonnetti/sevenalter.git"
+            "url": "https://github.com/designhammer/sevenalter.git"
         },
         {
             "type": "git",
-            "url": "https://github.com/frankyonnetti/sevenalter_toolbar.git"
+            "url": "https://github.com/designhammer/sevenalter_toolbar.git"
         }
     ],
 
 Require the modules.
 
-    composer require frankyonnetti/sevenalter frankyonnetti/sevenalter_toolbar
+    composer require designhammer/sevenalter designhammer/sevenalter_toolbar
 
