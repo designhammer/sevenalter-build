@@ -61,7 +61,7 @@ table,
 
 // ! Content header
 .content-header {
-  background-color: #eeeeee !important;
+  background-color: #e7e7e7 !important;
 }
 
 // ! Entity meta
@@ -96,6 +96,10 @@ fieldset:not(.fieldgroup) {
 }
 
 // ! Modules page
+.system-modules div:not(.entity-meta) .seven-details {
+  background-color: #fff;
+}
+
 .system-modules tr.even,
 .system-modules tr.odd,
 .locale-translation-status-form tr.even,
