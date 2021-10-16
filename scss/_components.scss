@@ -29,11 +29,15 @@ select {
   }
 }
 
+a.button--primary {
+  color: #fff;
+}
+
 // singal button
 table,
 .views-exposed-form {
 
-  .button {
+  .button:not(.button--primary) {
     @include gradient(#f6f6f6, #e6e6e6, vertical);
     background-color: #f1f1f1;
 
@@ -62,6 +66,11 @@ table,
 // ! Content header
 .content-header {
   background-color: #e7e7e7 !important;
+  box-shadow: inset 0 -1px 0 0 rgba(#ccc, 1); // bottom border
+
+  .page-title {
+    padding-bottom: 1.25rem;
+  }
 }
 
 // ! Entity meta
@@ -127,17 +136,24 @@ fieldset:not(.fieldgroup) {
 }
 
 // ! Tables
-thead th {
-  border-color: #d4d4d4 !important;
-  background: #f5f5f5 !important;
-}
+table {
 
-tr {
-  border-bottom-color: #e4e4e4;
-}
+  h3 {
+    font-size: rem(13);
+  }
 
-tbody tr {
-  border-color: #e4e4e4;
+  thead th {
+    border-color: #d4d4d4 !important;
+    background: #f5f5f5 !important;
+  }
+
+  tr {
+    border-bottom-color: #e4e4e4;
+  }
+
+  tbody tr {
+    border-color: #e4e4e4;
+  }
 }
 
 // ! Tabs
@@ -161,6 +177,10 @@ tbody tr {
     text-decoration: none !important;
     background-color: #fafafa !important;
   }
+}
+
+.is-horizontal .tabs {
+  margin-top: 0 !important;
 }
 
 .tabs.secondary .tabs__tab + .tabs__tab {
@@ -237,7 +257,17 @@ tbody tr {
 .ui-dialog {
 
   .ui-dialog-titlebar, {
-    background: #6b6b6b;
+    border-radius: 2px 2px 0 0 !important;
+    background: #e7e7e7 !important;
+  }
+
+  .ui-dialog-title {
+    color: #333 !important;
+  }
+
+  .ui-dialog-titlebar-close {
+    border-color: #e7e7e7 !important;
+    background: #888 !important;
   }
 
   .ui-widget-content.ui-dialog-buttonpane {
