@@ -29,3 +29,8 @@ Require the modules.
 
     composer require designhammer/sevenalter designhammer/sevenalter_toolbar
 
+
+## CSS Overrides when using the Seven Alter admin theme
+
+Before enabling this theme, please duplicate this file `css/example.override-styles.css` and rename it `css/sevenalter-overrides.css`.
+⚠️ Failing to create this file will cause a console error.
