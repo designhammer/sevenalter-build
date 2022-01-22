@@ -10,14 +10,6 @@
   @return math.div($pixels, $context) * 1rem;
 }
 
-// ! style placeholder text
-@mixin placeholder($color) {
-  &::-webkit-input-placeholder { color: $color; }
-  &::-moz-placeholder { color: $color; }
-  &:-moz-placeholder { color: $color; }
-  &::placeholder { color: $color; }
-}
-
 // vertical/horizontal gradient
 // @include gradient(rgba($black, 0.7), rgba($black, 0), horizontal);
 @mixin gradient($start-color, $end-color, $orientation) {
